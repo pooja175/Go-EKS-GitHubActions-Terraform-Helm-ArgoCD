@@ -34,7 +34,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: Terraform/eks
+        working-directory: Go-EKS-GitHubActions-Terraform-Helm-ArgoCD/Terraform/eks
 
 
     steps:
