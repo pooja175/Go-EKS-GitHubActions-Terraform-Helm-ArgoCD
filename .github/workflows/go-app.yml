@@ -46,6 +46,7 @@ jobs:
       uses: golangci/golangci-lint-action@v6
       with:
         version: v1.56.2
+        working-directory: Go-EKS-GitHubActions-Terraform-Helm-ArgoCD/Application-source-code
         
   Docker-Image-Push: 
     runs-on: ubuntu-latest
