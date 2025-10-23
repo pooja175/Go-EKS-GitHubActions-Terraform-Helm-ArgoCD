@@ -5,8 +5,8 @@ WORKDIR /app
 COPY go.mod go.sum ./
 RUN go mod download
 # Copy the source code. Note the slash at the end
-COPY *.go ./
 COPY . .
+RUN go build -o main .
 # Build
 RUN CGO_ENABLED=0 GOOS=linux go build -o /docker-gs-ping
 EXPOSE 8080
