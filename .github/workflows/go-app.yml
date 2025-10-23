@@ -105,17 +105,18 @@ jobs:
           repository: 'Go-EKS-GitHubActions-Terraform-Helm-ArgoCD'
           access-token: ${{ secrets.REPO_PAT }}
           branch: 'main'
+          path: .
 
 
       - name: Updating values in helm
         run: |
-          cd Go-EKS-GitHubActions-Terraform-Helm-ArgoCD
+          cd chats
           ls
           sed -i 's/tag: .*/tag: "${{github.run_id}}"/' values.yaml
 
       - name: Pushing changes
         run: |
-          cd Go-EKS-GitHubActions-Terraform-Helm-ArgoCD
+          cd chats
           git config --global user.email "pooja.shah175@outlook.com"
           git config --global user.name "pooja175"
           git add values.yaml
