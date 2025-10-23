@@ -108,20 +108,8 @@ jobs:
           path: .
 
 
-      - name: Updating values in helm
-        run: |
-          cd chats
-          ls
-          sed -i 's/tag: .*/tag: "${{github.run_id}}"/' values.yaml
 
-      - name: Pushing changes
-        run: |
-          cd chats
-          git config --global user.email "pooja.shah175@outlook.com"
-          git config --global user.name "pooja175"
-          git add values.yaml
-          git commit -am "Updated values.yaml file"
-          git push
+
 
       
 
