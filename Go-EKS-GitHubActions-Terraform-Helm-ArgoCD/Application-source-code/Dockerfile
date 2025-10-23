@@ -1,13 +1,21 @@
-FROM golang:1.19
-# Set destination for COPY
+FROM golang:1.22.5 as base
+
 WORKDIR /app
-# Download Go modules
-COPY go.mod go.sum ./
+
+COPY go.mod ./
+
 RUN go mod download
-# Copy the source code. Note the slash at the end
-COPY *.go ./
+
 COPY . .
-# Build
-RUN CGO_ENABLED=0 GOOS=linux go build -o /docker-gs-ping
+
+RUN go build -o main .
+
+FROM gcr.io/distroless/base
+
+COPY --from=base /app/main .
+
+COPY --from=base /app/static ./static
+
 EXPOSE 8080
+
 CMD ["./main"]
