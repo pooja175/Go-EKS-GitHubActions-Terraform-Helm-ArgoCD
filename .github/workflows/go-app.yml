@@ -134,6 +134,14 @@ jobs:
 
               # Show the updated file
               cat deployment.yaml
+      - name: Commit updated deployment.yaml
+        run: |
+            git config --global user.email "pooja.shah175@outlook.com"
+            git config --global user.name "pooja175"
+            git add Go-EKS-GitHubActions-Terraform-Helm-ArgoCD/chats/k8s/deployment.yaml
+            git commit -m "Update deployment image to latest"
+            git push
+              
   Updating-helm-tags:
       needs: Image-Scanning
       
