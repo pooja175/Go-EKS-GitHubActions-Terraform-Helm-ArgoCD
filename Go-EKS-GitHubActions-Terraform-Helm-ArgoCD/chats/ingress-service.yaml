@@ -19,10 +19,4 @@ spec:
             name: go-portfolio-svc
             port:
               number: 8080
-      - path: /api/?(.*)
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: server-service
-            port:
-              number: 5000
+  
