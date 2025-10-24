@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: go-portfolio
-        image: pooja175shah/go-port:18754908405  # Pull image and tag from values.yaml
+        image: "pooja175shah/go-port:${var.image_tag}"  # Pull image and tag from values.yaml
        
         ports:
         - containerPort: 8080
@@ -29,4 +29,5 @@ spec:
           limits:
             memory: "512Mi"
             cpu: "1"
+
 
