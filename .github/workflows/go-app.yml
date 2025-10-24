@@ -122,7 +122,18 @@ jobs:
       - name: Verify Deployment
         run: |
           kubectl rollout status deployment/go-portfolio-deployment -n go-app
-          kubectl get pods -n go-app    
+          kubectl get pods -n go-app
+          
+      - name: Update Deployment YAML with new image
+        run: |
+              # Navigate to the folder containing deployment.yaml
+              cd Go-EKS-GitHubActions-Terraform-Helm-ArgoCD/chats/k8s
+    
+              # Replace the image in the container spec
+              sed -i 's|image:.*|image: '"${{ secrets.DOCKER_USERNAME }}/go-port:${{ github.run_id }}"'|' deployment.yaml
+
+              # Show the updated file
+              cat deployment.yaml
   Updating-helm-tags:
       needs: Image-Scanning
       
