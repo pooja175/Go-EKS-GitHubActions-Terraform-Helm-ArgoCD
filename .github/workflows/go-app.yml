@@ -77,7 +77,7 @@ jobs:
         context: Go-EKS-GitHubActions-Terraform-Helm-ArgoCD/Application-source-code
         file: Go-EKS-GitHubActions-Terraform-Helm-ArgoCD/Application-source-code/Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/go-port:18761868703
+        tags: ${{ secrets.DOCKER_USERNAME }}/go-port:latest
 
   Image-Scanning:
       runs-on: ubuntu-latest
