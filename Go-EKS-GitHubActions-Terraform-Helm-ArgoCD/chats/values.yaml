@@ -5,4 +5,4 @@ image:
   repository: pooja175shah/go-port
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "18801427280"
+  tag: "18801448027"
