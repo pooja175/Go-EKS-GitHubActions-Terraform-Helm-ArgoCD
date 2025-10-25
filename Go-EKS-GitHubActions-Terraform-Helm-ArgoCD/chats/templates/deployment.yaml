@@ -7,7 +7,7 @@ metadata:
     role: go-portfolio
     env: dev
 spec:
-  replicas: 1  # Use replica count from values.yaml
+  replicas: {{ .Values.replicaCount }}   # Use replica count from values.yaml
   selector:
     matchLabels:
       role: go-portfolio
@@ -17,8 +17,9 @@ spec:
         role: go-portfolio
     spec:
       containers:
-      - name: go-portfolio
-        image: "pooja175shah/go-port:${var.image_tag}"  # Pull image and tag from values.yaml
+       name: go-portfolio
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"  # Pull image and tag from values.yaml
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
        
         ports:
         - containerPort: 8080
