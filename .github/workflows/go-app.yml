@@ -102,7 +102,7 @@ jobs:
         id: docker-scout
         uses: docker/scout-action@v1
         with:
-          command: cves,recommendations
+          command: cves
           image: ${{ secrets.DOCKER_USERNAME }}/go-port:${{ needs.Docker-Image-Push.outputs.image_tag }}
           #to: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.COMPARE_TAG }}
           ignore-unchanged: true
