@@ -134,7 +134,7 @@ jobs:
 
       - name: Pushing changes
         run: |
-          cd Go-EKS-GitHubActions-Terraform-Helm-ArgoCD/chats
+          cd Go-EKS-GitHubActions-Terraform-Helm-ArgoCD/Go-EKS-GitHubActions-Terraform-Helm-ArgoCD/chats
           git config --global user.email "pooja.shah175@outlook.com"
           git config --global user.name "pooja175"
           git add values.yaml
