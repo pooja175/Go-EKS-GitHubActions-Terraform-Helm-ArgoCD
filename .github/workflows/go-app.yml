@@ -24,8 +24,10 @@ jobs:
       uses: actions/setup-go@v2
       with: 
         go-version: 1.22
+        working-directory: Go-EKS-GitHubActions-Terraform-Helm-ArgoCD/Application-source-code
 
     - name: Build 
+      working-directory: Go-EKS-GitHubActions-Terraform-Helm-ArgoCD/Application-source-code
       run: go build -o go-app
 
     - name: Test
