@@ -120,7 +120,7 @@ jobs:
       - name: Cloning the helm repo
         uses: GuillaumeFalourd/clone-github-repo-action@v2.3
         with:
-          owner: 'pooja175shah'
+          owner: 'pooja175'
           repository: 'Go-EKS-GitHubActions-Terraform-Helm-ArgoCD'
           access-token: ${{ secrets.REPO_PAT }}
           branch: 'main'
